@@ -1,8 +1,19 @@
+import { DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Sandwich } from '../../sandwich-search/sandwich';
 
 import { SandwichListComponent } from './sandwich-list.component';
+
+export function getDataRoleSelector(dataRole: string) {
+  return By.css(`[data-role="${dataRole}"]`);
+}
+
+export function getSandwichNameList(debugElement: DebugElement) {
+  return debugElement
+    .queryAll(getDataRoleSelector('sandwich-name'))
+    .map(element => element.nativeElement.textContent);
+}
 
 describe('SandwichListComponent', () => {
   let component: SandwichListComponent;
@@ -36,10 +47,7 @@ describe('SandwichListComponent', () => {
 
     fixture.detectChanges();
 
-    const sandwichNameList = fixture.debugElement
-      /* Don't do this at home, there's way cleaner. */
-      .queryAll(By.css('span'))
-      .map(element => element.nativeElement.textContent);
+    const sandwichNameList = getSandwichNameList(fixture.debugElement);
 
     expect(sandwichNameList).toEqual(['Burger', 'Butter & Butter']);
   });
