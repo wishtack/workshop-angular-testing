@@ -51,4 +51,20 @@ describe('SandwichListComponent', () => {
 
     expect(sandwichNameList).toEqual(['Burger', 'Butter & Butter']);
   });
+
+  it('🚧 trigger sandwichBuy event', () => {
+    const observer = jasmine.createSpy('observer');
+
+    const sandwichList = [burger, butterAndButter];
+
+    component.sandwichList = sandwichList;
+
+    fixture.detectChanges();
+
+    // component.sandwichBuy.subscribe(observer);
+    //
+    // clickFirstBuyButton(fixture.debugElement);
+    //
+    // expect(observer).toHaveBeenCalledWith(sandwichList[0]);
+  });
 });
