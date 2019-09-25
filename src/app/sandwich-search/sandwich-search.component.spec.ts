@@ -1,3 +1,4 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { Cart } from '../cart/cart.service';
 import { Sandwich } from './sandwich';
@@ -5,15 +6,26 @@ import { SandwichSearchComponent } from './sandwich-search.component';
 import { SandwichSearch } from './sandwich-search.service';
 
 describe('SandwichSearchComponent', () => {
-  let cart: Cart;
-  let sandwichSearch: SandwichSearch;
   let component: SandwichSearchComponent;
+  let fixture: ComponentFixture<SandwichSearchComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [SandwichSearchComponent]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
-    cart = new Cart();
-    sandwichSearch = new SandwichSearch();
-    component = new SandwichSearchComponent(cart, sandwichSearch);
+    fixture = TestBed.createComponent(SandwichSearchComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
+
+  /* @todo TestBed.get is replaced by TestBed.inject in Angular 9. */
+  let cart: Cart;
+  beforeEach(() => (cart = TestBed.get(Cart)));
+  let sandwichSearch: SandwichSearch;
+  beforeEach(() => (sandwichSearch = TestBed.get(SandwichSearch)));
 
   it('should search and display sandwiches', () => {
     const sandwichList = [
