@@ -1,6 +1,7 @@
 import { of } from 'rxjs';
 import { Sandwich } from './sandwich';
 import { SandwichSearchComponent } from './sandwich-search.component';
+import { SandwichSearch } from './sandwich-search.service';
 
 describe('SandwichSearchComponent', () => {
   it('should search and display sandwiches', () => {
@@ -11,11 +12,9 @@ describe('SandwichSearchComponent', () => {
         price: 5
       })
     ];
-    const service = {
-      searchSandwiches(keywords: string) {
-        return of(sandwichList);
-      }
-    };
+    const service = new SandwichSearch();
+
+    spyOn(service, 'searchSandwiches').and.returnValue(of(sandwichList));
 
     const component = new SandwichSearchComponent(service);
 
