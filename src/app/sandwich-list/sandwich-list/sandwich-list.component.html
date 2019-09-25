@@ -1,5 +1,4 @@
-<div
-  *ngFor="let sandwich of sandwichList">
-  <span
-    data-role="sandwich-name">{{ sandwich.name }}</span>
+<div *ngFor="let sandwich of sandwichList">
+  <span data-role="sandwich-name">{{ sandwich.name }}</span>
+  <button data-role="sandwich-buy-button" type="button" (click)="buySandwich(sandwich)">BUY</button>
 </div>

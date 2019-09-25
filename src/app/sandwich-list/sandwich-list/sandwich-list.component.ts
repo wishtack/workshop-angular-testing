@@ -1,4 +1,11 @@
-import { Component, Input, NgModule, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  NgModule,
+  OnInit,
+  Output
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Sandwich } from '../../sandwich-search/sandwich';
 
@@ -9,10 +16,15 @@ import { Sandwich } from '../../sandwich-search/sandwich';
 })
 export class SandwichListComponent implements OnInit {
   @Input() sandwichList: Sandwich[];
+  @Output() sandwichBuy = new EventEmitter<Sandwich>();
 
   constructor() {}
 
   ngOnInit() {}
+
+  buySandwich(sandwich: Sandwich) {
+    this.sandwichBuy.emit(sandwich);
+  }
 }
 
 @NgModule({

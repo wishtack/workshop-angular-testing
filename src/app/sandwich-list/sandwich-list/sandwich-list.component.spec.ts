@@ -1,6 +1,8 @@
 import { DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { interval, timer } from 'rxjs';
+import { finalize, first, switchMap, tap } from 'rxjs/operators';
 import { Sandwich } from '../../sandwich-search/sandwich';
 
 import { SandwichListComponent } from './sandwich-list.component';
@@ -13,6 +15,12 @@ export function getSandwichNameList(debugElement: DebugElement) {
   return debugElement
     .queryAll(getDataRoleSelector('sandwich-name'))
     .map(element => element.nativeElement.textContent);
+}
+
+function clickFirstBuyButton(debugElement: DebugElement) {
+  debugElement
+    .query(getDataRoleSelector('sandwich-buy-button'))
+    .triggerEventHandler('click', {});
 }
 
 describe('SandwichListComponent', () => {
@@ -52,7 +60,7 @@ describe('SandwichListComponent', () => {
     expect(sandwichNameList).toEqual(['Burger', 'Butter & Butter']);
   });
 
-  it('🚧 trigger sandwichBuy event', () => {
+  it('trigger sandwichBuy event', () => {
     const observer = jasmine.createSpy('observer');
 
     const sandwichList = [burger, butterAndButter];
@@ -61,10 +69,10 @@ describe('SandwichListComponent', () => {
 
     fixture.detectChanges();
 
-    // component.sandwichBuy.subscribe(observer);
-    //
-    // clickFirstBuyButton(fixture.debugElement);
-    //
-    // expect(observer).toHaveBeenCalledWith(sandwichList[0]);
+    component.sandwichBuy.subscribe(observer);
+
+    clickFirstBuyButton(fixture.debugElement);
+
+    expect(observer).toHaveBeenCalledWith(sandwichList[0]);
   });
 });
