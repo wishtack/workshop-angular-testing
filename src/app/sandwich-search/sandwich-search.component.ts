@@ -19,7 +19,9 @@ export class SandwichSearchComponent implements OnInit {
    * @deprecated 🚧 Work in progress.
    */
   searchSandwiches(keywords: string) {
-    throw new Error('🚧 work in progress!');
+    this._sandwichSearch
+      .searchSandwiches(keywords)
+      .subscribe(sandwichList => (this.sandwichList = sandwichList));
   }
 }
 

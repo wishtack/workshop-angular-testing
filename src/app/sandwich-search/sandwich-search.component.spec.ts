@@ -3,7 +3,7 @@ import { Sandwich } from './sandwich';
 import { SandwichSearchComponent } from './sandwich-search.component';
 
 describe('SandwichSearchComponent', () => {
-  xit('🚧 should search and display sandwiches', () => {
+  it('should search and display sandwiches', () => {
     const sandwichList = [
       new Sandwich({
         id: 'butter-and-butter',
