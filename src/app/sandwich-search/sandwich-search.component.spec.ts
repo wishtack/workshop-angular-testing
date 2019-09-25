@@ -1,24 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SandwichSearchComponent } from './sandwich-search.component';
 
 describe('SandwichSearchComponent', () => {
-  let component: SandwichSearchComponent;
-  let fixture: ComponentFixture<SandwichSearchComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [SandwichSearchComponent]
-    }).compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SandwichSearchComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  xit('🚧 should search and display sandwiches', () => {
+    throw new Error('🚧 work in progress!');
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  xit('🚧 should add sandwich to cart when buy button is clicked', () => {
+    throw new Error('🚧 work in progress!');
   });
 });
