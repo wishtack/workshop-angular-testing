@@ -1,4 +1,6 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
 import { Cart } from '../cart/cart.service';
 import { Sandwich } from './sandwich';
@@ -11,7 +13,8 @@ describe('SandwichSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SandwichSearchComponent]
+      declarations: [SandwichSearchComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 
@@ -40,7 +43,14 @@ describe('SandwichSearchComponent', () => {
 
     component.searchSandwiches('Butter & Butter');
 
-    expect(component.sandwichList).toEqual(sandwichList);
+    fixture.detectChanges();
+
+    /* Make sure that `sandwichList` are transmitted to <app-sandwich-list>. */
+    const sandwichListEl = fixture.debugElement.query(
+      By.css('app-sandwich-list')
+    );
+    expect(sandwichListEl.properties.sandwichList).toEqual(sandwichList);
+
     expect(sandwichSearch.searchSandwiches).toHaveBeenCalledWith(
       'Butter & Butter'
     );

@@ -1,6 +1,7 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Cart } from '../cart/cart.service';
+import { SandwichListModule } from '../sandwich-list/sandwich-list/sandwich-list.component';
 import { Sandwich } from './sandwich';
 import { SandwichSearch } from './sandwich-search.service';
 
@@ -29,7 +30,7 @@ export class SandwichSearchComponent implements OnInit {
 
 @NgModule({
   declarations: [SandwichSearchComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, SandwichListModule],
   exports: [SandwichSearchComponent]
 })
 export class SandwichSearchModule {}
