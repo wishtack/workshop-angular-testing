@@ -31,8 +31,10 @@ describe('SandwichListComponent', () => {
     fixture.detectChanges();
   });
 
-  xit('🚧 should show sandwiches', () => {
+  it('should show sandwiches', () => {
     component.sandwichList = [burger, butterAndButter];
+
+    fixture.detectChanges();
 
     const sandwichNameList = fixture.debugElement
       /* Don't do this at home, there's way cleaner. */
