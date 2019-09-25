@@ -9,6 +9,9 @@ describe('SandwichSearchComponent', () => {
   });
 
   xit('🚧 should add sandwich to cart when buy button is clicked', () => {
+    // @todo give a fake cart to the component
+    // @todo call buySandwich method
+    // @todo make sure fake cart is called
     throw new Error('🚧 work in progress!');
   });
 });
