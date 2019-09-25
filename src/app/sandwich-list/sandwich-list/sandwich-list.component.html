@@ -1,5 +1,5 @@
-<div>
+<div
+  *ngFor="let sandwich of sandwichList">
   <span
-    data-role="sandwich-name"
-    *ngFor="let sandwich of sandwichList">{{ sandwich.name }}</span>
+    data-role="sandwich-name">{{ sandwich.name }}</span>
 </div>
