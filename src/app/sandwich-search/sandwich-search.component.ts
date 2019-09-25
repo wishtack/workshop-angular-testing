@@ -22,11 +22,8 @@ export class SandwichSearchComponent implements OnInit {
       .subscribe(sandwichList => (this.sandwichList = sandwichList));
   }
 
-  /**
-   * @deprecated 🚧 Work in progress.
-   */
   buySandwich(sandwich: Sandwich) {
-    throw new Error('🚧 work in progress!');
+    this._cart.addSandwich(sandwich);
   }
 }
 
