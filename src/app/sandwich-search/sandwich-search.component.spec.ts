@@ -5,6 +5,16 @@ import { SandwichSearchComponent } from './sandwich-search.component';
 import { SandwichSearch } from './sandwich-search.service';
 
 describe('SandwichSearchComponent', () => {
+  let cart: Cart;
+  let sandwichSearch: SandwichSearch;
+  let component: SandwichSearchComponent;
+
+  beforeEach(() => {
+    cart = new Cart();
+    sandwichSearch = new SandwichSearch();
+    component = new SandwichSearchComponent(cart, sandwichSearch);
+  });
+
   it('should search and display sandwiches', () => {
     const sandwichList = [
       new Sandwich({
@@ -13,23 +23,18 @@ describe('SandwichSearchComponent', () => {
         price: 5
       })
     ];
-    const service = new SandwichSearch();
 
-    spyOn(service, 'searchSandwiches').and.returnValue(of(sandwichList));
-
-    const component = new SandwichSearchComponent(null, service);
+    spyOn(sandwichSearch, 'searchSandwiches').and.returnValue(of(sandwichList));
 
     component.searchSandwiches('Butter & Butter');
 
     expect(component.sandwichList).toEqual(sandwichList);
-    expect(service.searchSandwiches).toHaveBeenCalledWith('Butter & Butter');
+    expect(sandwichSearch.searchSandwiches).toHaveBeenCalledWith(
+      'Butter & Butter'
+    );
   });
 
   it('should add sandwich to cart when buy button is clicked', () => {
-    const cart = new Cart();
-
-    const component = new SandwichSearchComponent(cart, null);
-
     const sandwich = new Sandwich({
       id: 'butter-and-butter',
       name: 'Butter & Butter',
