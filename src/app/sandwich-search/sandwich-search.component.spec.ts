@@ -21,6 +21,7 @@ describe('SandwichSearchComponent', () => {
     component.searchSandwiches('Butter & Butter');
 
     expect(component.sandwichList).toEqual(sandwichList);
+    expect(service.searchSandwiches).toHaveBeenCalledWith('Butter & Butter');
   });
 
   xit('🚧 should add sandwich to cart when buy button is clicked', () => {
