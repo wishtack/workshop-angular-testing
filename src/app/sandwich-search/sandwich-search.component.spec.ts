@@ -17,13 +17,11 @@ describe('SandwichSearchComponent', () => {
       }
     };
 
-    // const component = new SandwichSearchComponent(service);
-    //
-    // component.searchSandwiches('Butter & Butter');
-    //
-    // expect(component.sandwichList).toEqual(sandwichList);
+    const component = new SandwichSearchComponent(service);
 
-    throw new Error('🚧 work in progress!');
+    component.searchSandwiches('Butter & Butter');
+
+    expect(component.sandwichList).toEqual(sandwichList);
   });
 
   xit('🚧 should add sandwich to cart when buy button is clicked', () => {
