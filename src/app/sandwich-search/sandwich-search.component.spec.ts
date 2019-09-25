@@ -1,4 +1,5 @@
 import { of } from 'rxjs';
+import { Cart } from '../cart/cart.service';
 import { Sandwich } from './sandwich';
 import { SandwichSearchComponent } from './sandwich-search.component';
 import { SandwichSearch } from './sandwich-search.service';
@@ -16,7 +17,7 @@ describe('SandwichSearchComponent', () => {
 
     spyOn(service, 'searchSandwiches').and.returnValue(of(sandwichList));
 
-    const component = new SandwichSearchComponent(service);
+    const component = new SandwichSearchComponent(null, service);
 
     component.searchSandwiches('Butter & Butter');
 
@@ -25,9 +26,20 @@ describe('SandwichSearchComponent', () => {
   });
 
   xit('🚧 should add sandwich to cart when buy button is clicked', () => {
-    // @todo give a fake cart to the component
-    // @todo call buySandwich method
-    // @todo make sure fake cart is called
-    throw new Error('🚧 work in progress!');
+    const cart = new Cart();
+
+    const component = new SandwichSearchComponent(cart, null);
+
+    const sandwich = new Sandwich({
+      id: 'butter-and-butter',
+      name: 'Butter & Butter',
+      price: 5
+    });
+
+    spyOn(cart, 'addSandwich');
+
+    component.buySandwich(sandwich);
+
+    expect(cart.addSandwich).toHaveBeenCalledWith(sandwich);
   });
 });

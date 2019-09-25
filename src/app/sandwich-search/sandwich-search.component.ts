@@ -1,5 +1,6 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Cart } from '../cart/cart.service';
 import { Sandwich } from './sandwich';
 import { SandwichSearch } from './sandwich-search.service';
 
@@ -11,7 +12,7 @@ import { SandwichSearch } from './sandwich-search.service';
 export class SandwichSearchComponent implements OnInit {
   sandwichList: Sandwich[];
 
-  constructor(private _sandwichSearch: SandwichSearch) {}
+  constructor(private _cart: Cart, private _sandwichSearch: SandwichSearch) {}
 
   ngOnInit() {}
 
@@ -19,6 +20,13 @@ export class SandwichSearchComponent implements OnInit {
     this._sandwichSearch
       .searchSandwiches(keywords)
       .subscribe(sandwichList => (this.sandwichList = sandwichList));
+  }
+
+  /**
+   * @deprecated 🚧 Work in progress.
+   */
+  buySandwich(sandwich: Sandwich) {
+    throw new Error('🚧 work in progress!');
   }
 }
 
