@@ -15,9 +15,6 @@ export class SandwichSearchComponent implements OnInit {
 
   ngOnInit() {}
 
-  /**
-   * @deprecated 🚧 Work in progress.
-   */
   searchSandwiches(keywords: string) {
     this._sandwichSearch
       .searchSandwiches(keywords)
