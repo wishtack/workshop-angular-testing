@@ -2,7 +2,7 @@ import { DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Scavenger } from '@wishtack/rx-scavenger';
-import { Sandwich } from '../../sandwich-search/sandwich';
+import { Sandwich } from '../sandwich-search/sandwich';
 import { SandwichListComponent } from './sandwich-list.component';
 
 export function getDataRoleSelector(dataRole: string) {
