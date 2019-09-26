@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Sandwich } from '../sandwich-search/sandwich';
+import { Sandwich } from '../sandwich-core/sandwich';
 
 @Injectable({
   providedIn: 'root'
