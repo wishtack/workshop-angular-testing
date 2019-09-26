@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
 import { Cart } from '../cart/cart.service';
-import { Sandwich } from './sandwich';
+import { Sandwich } from '../sandwich-core/sandwich';
 import { SandwichSearchComponent } from './sandwich-search.component';
 import { SandwichSearch } from './sandwich-search.service';
 
