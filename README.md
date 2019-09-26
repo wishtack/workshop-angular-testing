@@ -81,7 +81,7 @@ Start with the usage and not the implementation or interface.
 
 ### 1.8. Enable the test by replacing `xit` with `it`... and make it work
 
-🛑🤔 [OPEN SOLUTION](https://codesandbox.io/s/github/wishtack/workshop-angular-testing/tree/1-isolated-testing-sandwich-search) 👅🐈 
+🛑🤔 [OPEN SOLUTION](https://codesandbox.io/s/github/wishtack/workshop-angular-testing/tree/1-isolated-testing-sandwich-search) 
 
 ## 2. Isolated testing `<app-sandwich-search>` with spies
 
@@ -110,7 +110,7 @@ it('...', () => {
 });
 ```
 
-🛑🤔 [OPEN SOLUTION](https://codesandbox.io/s/github/wishtack/workshop-angular-testing/tree/2-isolated-testing-sandwich-search-with-spies) 👅🐈
+🛑🤔 [OPEN SOLUTION](https://codesandbox.io/s/github/wishtack/workshop-angular-testing/tree/2-isolated-testing-sandwich-search-with-spies)
 
 ## 3. Dom testing `<app-sandwich-list>`
 
@@ -138,7 +138,7 @@ fixture.detectChanges();
 expect(fixture.debugEment.query(By.css('[data="destroy-planet-button"]'))).toBeNull(); // 😰
 ```
 
-🛑🤔 [OPEN SOLUTION](https://codesandbox.io/s/github/wishtack/workshop-angular-testing/tree/3-dom-testing-sandwich-list) 👅🐈
+🛑🤔 [OPEN SOLUTION](https://codesandbox.io/s/github/wishtack/workshop-angular-testing/tree/3-dom-testing-sandwich-list)
 
 ## 4. Dom testing events
 
@@ -152,7 +152,7 @@ fixture.debugElement.query(...).triggerEventHandler('click', clickEvent);
 
 😉 `EventEmitter` is a `Subject` which is an `Observable`, so you can subscribe to the output.
 
-🛑🤔 [OPEN SOLUTION](https://codesandbox.io/s/github/wishtack/workshop-angular-testing/tree/4-dom-testing-sandwich-list-events) 👅🐈
+🛑🤔 [OPEN SOLUTION](https://codesandbox.io/s/github/wishtack/workshop-angular-testing/tree/4-dom-testing-sandwich-list-events)
 
 ## 5. Shallow testing 
 
@@ -171,7 +171,7 @@ beforeEach(() => myService = TestBed.inject(MyService)); // Since Angular 9
 beforeEach(() => myService = TestBed.get(MyService)) // Before Angular 9
 ```
 
-🛑🤔 [OPEN SOLUTION](https://codesandbox.io/s/github/wishtack/workshop-angular-testing/tree/5-shallow-testing-sandwich-search) 👅🐈
+🛑🤔 [OPEN SOLUTION](https://codesandbox.io/s/github/wishtack/workshop-angular-testing/tree/5-shallow-testing-sandwich-search)
 
 # Known issues with Codesandbox
 🐞 There are some memory limitations on codesandbox that can make karma crash.
