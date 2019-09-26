@@ -1,7 +1,7 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Cart } from '../cart/cart.service';
-import { Sandwich } from './sandwich';
+import { Sandwich } from '../sandwich-core/sandwich';
 import { SandwichSearch } from './sandwich-search.service';
 
 @Component({
