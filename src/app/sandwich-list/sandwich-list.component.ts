@@ -1,6 +1,6 @@
-import { Component, Input, NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Sandwich } from '../sandwich-search/sandwich';
+import { Component, Input, NgModule, OnInit } from '@angular/core';
+import { Sandwich } from '../sandwich-core/sandwich';
 
 @Component({
   selector: 'app-sandwich-list',
