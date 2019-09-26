@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   Component,
   EventEmitter,
@@ -6,8 +7,7 @@ import {
   OnInit,
   Output
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Sandwich } from '../sandwich-search/sandwich';
+import { Sandwich } from '../sandwich-core/sandwich';
 
 @Component({
   selector: 'app-sandwich-list',
