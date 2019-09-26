@@ -1,5 +1,5 @@
 import { of } from 'rxjs';
-import { Sandwich } from './sandwich';
+import { Sandwich } from '../sandwich-core/sandwich';
 import { SandwichSearchComponent } from './sandwich-search.component';
 
 describe('SandwichSearchComponent', () => {
